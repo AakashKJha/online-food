@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        * {box-sizing: border-box}
+        body {font-family: "Lato", sans-serif;}
+        
+        /*  tab */
+        .tab {
+          float: left;
+          border: 1px solid #ccc;
+          background-color: #f1f1f1;
+          width: 30%;
+          height: 300px;
+        }
+        
+        /*  buttons inside the tab */
+        .tab button {
+          display: block;
+          background-color: inherit;
+          color: black;
+          padding: 22px 16px;
+          width: 100%;
+          border: none;
+          outline: none;
+          text-align: left;
+          cursor: pointer;
+          transition: 0.3s;
+          font-size: 17px;
+        }
+        
+
+        .tab button:hover {
+          background-color: #ddd;
+        }
+        
+        /* Create an active/current "tab button" class */
+        .tab button.active {
+          background-color: #ccc;
+        }
+        
+        /*  tab content */
+        .tabcontent {
+          float: left;
+          padding: 0px 12px;
+          border: 1px solid #ccc;
+          width: 70%;
+          border-left: none;
+          height: 300px;
+        }
+        </style>
+</head>
+<body>
+  <h3 >Total: Rs.  <span class="cart__total">0</span></h3>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Card</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">UPI</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">pay On Delivery</button>
+</div>
+<div id="London" class="tabcontent">
+  <div class="card">
+    <h3 class="card-header bg-primary text-white">Card Details</h3>
+    <div class="card-body">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <form>
+              <label> Name on card :</label><br><span> <input type="text" placeholder="Name" required></span><br><br>
+             
+              <label>Valid till : </label><br>
+              <input type="month"  min="2020-11" value="2020-11" max="2025-11" ><br><br>
+            
+
+        
+          </form>
+           </div>
+           <div class="col-6">
+            <form>
+             
+              <label>Card No. :</label><br><span><input type="tel" id="number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required></span><br><br>
+             
+              <label>CVV</label><br>
+              <input type="password" maxlength="3" placeholder="123" required>
+
+        
+          </form>
+           </div>
+        </div>
+         
+       </div>
+    </div>
+</div>
+</div>
+
+
+
+<div id="Paris" class="tabcontent">
+  <div class="card">
+    <h3 class="card-header bg-primary text-white">UPI payment</h3>
+    <div class="card-body">
+      <label for="mob">UPI id :</label>
+                  <div class="container">
+                    <div class="row">
+                      
+                      <div class="col-7">
+                        <form class="was-validated">
+                          <div class="form-group">
+                        
+                            <input type="tel" class="form-control" id="mob" placeholder="89954 XXXXX" name="mob" minlength="10" maxlength="10" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                          </div>
+                        </form>
+                      </div>
+                      
+                      <div class="col-5">
+                        <form class="was-validated">
+                          <div class="form-group">
+                          
+                           <span> <input type="text" class="form-control" id="upi" placeholder="@paytm" name="mob" pattern="@[a-z]{3,}"  minlength="3" maxlength="6" required></span>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                          </div>
+                          <button type="submit">submit</button>
+                          
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+    </div>
+</div>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <div class="card">
+    <h3 class="card-header bg-primary text-white">pay on Delivery</h3>
+    <div class="card-body">
+      <form class="was-validated">
+        <form class="was-validated">
+          <div class="form-group">
+        
+            <input type="tel" class="form-control" id="mob" placeholder="89954 XXXXX" name="mob" minlength="10" maxlength="10" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+        </form>
+          <div class="form-group form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="remember" required> I agree on saving my data.
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Check this checkbox to continue.</div>
+            </label>
+          </div>
+          
+      
+        </form>
+    </div>
+</div>
+</div>
+
+<input type="submit">
+
+    
+
+    <script>
+        function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+        
+        document.getElementById("defaultOpen").click();
+        </script>
+         <script>
+            let theInputElem = document.getElementById('number')
+            theInputElem.focus()
+      
+
+            theInputElem.addEventListener('input', cardtype)
+            function cardtype(ev) {
+          let theInput = ev.target
+          let newValue = theInput.value;
+        
+          (function removeNonDigit() {
+            newValue = newValue.replace(/\D/g, '')
+          })();
+        
+          (function removeRedundantDigit() {
+            newValue = newValue.slice(0, 19)
+          })();
+        
+          (function addSpaces() {
+            var i = 4
+            while (i < newValue.length) {
+              newValue = newValue.slice(0, i) + ' ' + newValue.slice(i,newValue.length)
+              i += 4 + 1
+            }
+          })();
+        
+          theInput.value = newValue
+        }
+          </script>
+          <script src="app.js"></script>
+          <script src="node_modules/jquery/dist/jquery.min.js"></script>
+          <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+          <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

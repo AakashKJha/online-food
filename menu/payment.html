@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+    <div>
+      <h3 >Total: Rs.  <span class="cart__total">0</span></h3>
+    </div>
+    <h2>pay Using</h2>
+    <div class="container mt-3">
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Card">
+          Debit card/ credit card
+        </button><br><br>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#UPI">
+            UPI
+          </button><br><br>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#payOn">
+            Pay on Delivery
+          </button>
+      
+        <!-- The Modal -->
+        <div class="modal fade" id="Card">
+          <div class="modal-dialog">
+            <div class="modal-content">
+            
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">card details</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+              </div>
+              
+              <!-- Modal body -->
+              <div class="modal-body">
+             <div class="container">
+              <div class="row">
+                <div class="col-6">
+                  <form>
+                    <label> Name on card :</label><br><span> <input type="text" placeholder="Name" required></span><br><br>
+                   
+                    <label>Valid till : </label><br>
+                    <input type="month"  min="2020-11" value="2020-11" max="2025-11" ><br><br>
+                  
+  
+              
+                </form>
+                 </div>
+                 <div class="col-6">
+                  <form>
+                   
+                    <label>Card No. :</label><br><span><input type="tel" id="number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required></span><br><br>
+                   
+                    <label>CVV</label><br>
+                    <input type="password" maxlength="3" placeholder="123" required>
+  
+              
+                </form>
+                 </div>
+              </div>
+               
+             </div>
+              </div>
+              
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <!--model 2-->
+         <!-- The Modal -->
+         <div class="modal fade" id="UPI">
+            <div class="modal-dialog">
+              <div class="modal-content">
+              
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Pay via UPI</h4>
+                  <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <label for="mob">UPI id :</label>
+                  <div class="container">
+                    <div class="row">
+                      
+                      <div class="col-7">
+                        <form class="was-validated">
+                          <div class="form-group">
+                        
+                            <input type="tel" class="form-control" id="mob" placeholder="89954 XXXXX" name="mob" minlength="10" maxlength="10" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                          </div>
+                        </form>
+                      </div>
+                      
+                      <div class="col-5">
+                        <form class="was-validated">
+                          <div class="form-group">
+                          
+                           <span> <input type="text" class="form-control" id="upi" placeholder="@paytm" name="mob" pattern="@[a-z]{3,}"  minlength="3" maxlength="6" required></span>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                          </div>
+                          <button type="submit">submit</button>
+                          
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <!--model 3-->
+           <!-- The Modal -->
+        <div class="modal fade" id="payOn">
+            <div class="modal-dialog">
+              <div class="modal-content">
+              
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Pay on delivery</h4>
+                  <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <form class="was-validated">
+                    <form class="was-validated">
+                      <div class="form-group">
+                    
+                        <input type="tel" class="form-control" id="mob" placeholder="89954 XXXXX" name="mob" minlength="10" maxlength="10" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                      </div>
+                    </form>
+                      <div class="form-group form-check">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox" name="remember" required> I agree on saving my data.
+                          <div class="valid-feedback">Valid.</div>
+                          <div class="invalid-feedback">Check this checkbox to continue.</div>
+                        </label>
+                      </div>
+                      
+                  
+                    </form>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <h3 >Total: Rs.  <span class="cart__total">0</span></h3>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Pay</button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        
+       
+        
+      </div>
+      <script>
+        let theInputElem = document.getElementById('number')
+        theInputElem.focus()
+  
+        // add listener for your input element.
+        theInputElem.addEventListener('input', cardtype)
+        function cardtype(ev) {
+      let theInput = ev.target
+      let newValue = theInput.value;
+    
+      (function removeNonDigit() {
+        newValue = newValue.replace(/\D/g, '')
+      })();
+    
+      (function removeRedundantDigit() {
+        newValue = newValue.slice(0, 19)
+      })();
+    
+      (function addSpaces() {
+        var i = 4
+        while (i < newValue.length) {
+          newValue = newValue.slice(0, i) + ' ' + newValue.slice(i,newValue.length)
+          i += 4 + 1
+        }
+      })();
+    
+      theInput.value = newValue
+    }
+      </script>
+
+    <script src="app.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
